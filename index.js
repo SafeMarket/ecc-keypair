@@ -13,7 +13,7 @@ while (!secp256k1.privateKeyVerify(privateKeyBuffer)) {
 }
 
 function EccKeypair(privateKey) {
-  arguguard('EccKeypair', [Amorph], arguments)
+  arguguard('EccKeypair', ['Amorph'], arguments)
   this.privateKey = privateKey
   this.publicKey = privateKey.as('buffer', (privateKeyBuffer) => {
     return secp256k1.publicKeyCreate(privateKeyBuffer, false)
